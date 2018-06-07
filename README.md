@@ -9,3 +9,17 @@ Web components gotcha's
 3. Custom elements cannot be self-closing because HTML only allows a few elements to be self-closing. Always write a closing tag (`<app-drawer></app-drawer>`).
 4. Set a :host display style (e.g. block, inline-block, flex) unless you prefer the default of inline.  
   4.1  Custom elements are display: inline by default, so setting their width or height will have no effect. This often comes as a surprise to developers and may cause issues related to laying out the page. Unless you prefer an inline display, you should always set a default display value.
+5. You can't rely on `disconnectedCallback()` for your element being removed from the DOM in all circumstances. For example, disconnectedCallback() will never be called if the user closes the tab.
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+*Sources:*
+Google:
+https://developers.google.com/web/fundamentals/web-components/customelements
